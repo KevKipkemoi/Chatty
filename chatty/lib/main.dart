@@ -1,21 +1,18 @@
 import 'package:flutter/material.dart';
+import 'chat_screen.dart';
 import 'package:flutter/foundation.dart';
-import 'package:flutter/cupertino.dart';
+import 'themes.dart';
 
-import 'package:chatty/ChatScreen.dart';
-//import 'package:chatty/util/Themes.dart'; TODO
-//
-void main() =>runApp(new FlutterChatApp());
+void main() =>runApp(new Chatty());
 
-class FlutterChatApp extends StatelessWidget {
+class Chatty extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      debugShowCheckedModeBanner: false,
       title: "Chatty",
       theme: defaultTargetPlatform == TargetPlatform.android
-        ? Themes.kDefaultTheme
-        : Themes.kiOSTheme,
+          ? kIOSTheme
+          : kDefaultTheme,
       home: new ChatScreen(),
     ); // MaterialApp
   }
